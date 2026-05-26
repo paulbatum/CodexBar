@@ -20,29 +20,11 @@ jobs:
       matrix:
         include:
           - name: linux-x64
-            runs-on: ubuntu-24.04
+            runs-on: ubuntu-22.04
             platform: linux
             asset-arch: x86_64
             build-arch: ""
             static-swift-stdlib: true
-          - name: linux-arm64
-            runs-on: ubuntu-24.04-arm
-            platform: linux
-            asset-arch: aarch64
-            build-arch: ""
-            static-swift-stdlib: true
-          - name: macos-arm64
-            runs-on: macos-15
-            platform: macos
-            asset-arch: arm64
-            build-arch: arm64
-            static-swift-stdlib: false
-          - name: macos-x86_64
-            runs-on: macos-15-intel
-            platform: macos
-            asset-arch: x86_64
-            build-arch: x86_64
-            static-swift-stdlib: false
     runs-on: ${{ matrix.runs-on }}
     env:
       RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
