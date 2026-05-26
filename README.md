@@ -36,6 +36,13 @@ brew install --cask steipete/tap/codexbar
 ```
 
 ### CLI Tarballs (macOS/Linux)
+Install from official GitHub release tarballs without Swift:
+```bash
+./bin/install-codexbar-cli-release.sh        # latest
+./bin/install-codexbar-cli-release.sh 0.29.0 # specific version
+```
+By default this installs `codexbar` to `~/.local/bin`; set `CODEXBAR_INSTALL_DIR=/usr/local/bin` to change it.
+
 Homebrew formula (Linux today):
 ```bash
 brew install steipete/tap/codexbar
